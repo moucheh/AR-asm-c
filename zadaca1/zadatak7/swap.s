@@ -1,31 +1,31 @@
-.section .data
-.globl n1
-n1: .word 1, 3, 5, 7, 9, -9, -7, -5, -3, -1
+#.section .data
+#.globl n1
+#n1: .word 1, 3, 5, 7, 9, -9, -7, -5, -3, -1
 
-.globl n2
-n2: .word 0, 2, 4, 6, 8, -8, -6, -4, -2, 0
+#.globl n2
+#n2: .word 0, 2, 4, 6, 8, -8, -6, -4, -2, 0
 
 .section .text
 .globl swap
-.globl main
-main:
-	#prologue
-	addiu $sp, $sp, -64
-	sw $ra, 60($sp)
-	#########
-	la $a0, n1 # load op1 ptr into a0
-	la $a1, n2 # load op2 ptr into a1
-	addiu $a2, $0, 40
-		jal swap
-		nop
-	#epilogue
-	lw $ra, 60($sp)
-	addiu $sp, $sp, 64
-	#########
-	return:
-	addiu $v0, $0, 0
-	jr $ra
-	nop
+# .globl main
+# main:
+# 	#prologue
+# 	addiu $sp, $sp, -64
+# 	sw $ra, 60($sp)
+# 	#########
+# 	la $a0, n1 # load op1 ptr into a0
+# 	la $a1, n2 # load op2 ptr into a1
+# 	addiu $a2, $0, 40
+# 		jal swap
+# 		nop
+# 	#epilogue
+# 	lw $ra, 60($sp)
+# 	addiu $sp, $sp, 64
+# 	#########
+# 	return:
+# 	addiu $v0, $0, 0
+# 	jr $ra
+# 	nop
 
 swap:
 	addiu $t0, $0, 0 # t0 -> i

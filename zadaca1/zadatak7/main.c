@@ -23,11 +23,11 @@ int main() {
 	return 0;
 }
 
-void swap(void* op1, void* op2, int32_t size) {
-	char* a = op1, *b = op2;
-	for (int i = 0; i < size; ++i) {
-		*a = *a ^ *b;
-		*b = *a ^ *b;
-		*a = *a ^ *b;
-	}
-}
+// void swap(void* op1, void* op2, int32_t size) {
+// 	char* a = op1, *b = op2;
+// 	for (int i = 0; i < size; ++i) {
+// 		*a = *a ^ *b;
+// 		*b = *a ^ *b;
+// 		*a = *a ^ *b;
+// 	}
+// }
