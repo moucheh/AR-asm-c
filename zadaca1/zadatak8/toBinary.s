@@ -6,31 +6,31 @@ buffer: .space 20
 number: .word 69 
 
 .section .text
-.globl main
-main:
-	#prologue
-	addiu $sp, $sp, -64
-	lw $ra, 60($sp)
-	#########
-	la $a0, buffer
-	la $a1, number
-	lw $a1, 0($a1)
-
-	jal toBinary
-	#epilogue
-	return:
-	nop
-	addiu $sp, $sp, 64
-	lw $ra, 60($sp)
-	#########
-	addiu $v0, $0, 0
-	jr $ra
-	nop
+#.globl main
+#main:
+#	#prologue
+#	addiu $sp, $sp, -64
+#	lw $ra, 60($sp)
+#	#########
+#	la $a0, buffer
+#	la $a1, number
+#	lw $a1, 0($a1)
+#
+#	jal toBinary
+#	#epilogue
+#	return:
+#	nop
+#	addiu $sp, $sp, 64
+#	lw $ra, 60($sp)
+#	#########
+#	addiu $v0, $0, 0
+#	jr $ra
+#	nop
 
 
 .globl toBinary
 toBinary:
-	addiu $v0, $0, 1  # len = 1 -> v0
+	addiu $v0, $0, 0  # len = 0 -> v0
 	addu $t0, $0, $a1
 
 	j count_condition
@@ -47,15 +47,17 @@ toBinary:
 
 	j convert_condition
 	convert_body:
-		andi $t4, $a1, 1
-		addiu $t4, $t4, 48
-		sb $t4, 0($t2)
-		addiu $t2, $t2, -1
+		andi $t4, $a1, 1 # extract last bit
+		addiu $t4, $t4, 48 # add 48 to (ascii 48 = '0')
+		sb $t4, 0($t2) # store bit to buffer
+		addiu $t2, $t2, -1 # decrement ptr
 
-		srl $a1, $a1, 1
+		srl $a1, $a1, 1 # shift right to remove last bit
 	convert_condition:
 		slt $t3, $t2, $a0
-		bne $t3, $0, convert_body
+		beq $t3, $0, convert_body
+	addu $t0, $v0, $a0
+	sb $0, ($t0)
 
 	jr $ra
 
