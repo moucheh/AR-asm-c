@@ -12,13 +12,13 @@ int main() {
 	return 0;
 }
 
-char mytoupper(char c) {
-	if (c > 96 && c < 127) return c - 32;
-	return c;
-}
+// char mytoupper(char c) {
+// 	if (c > 96 && c < 127) return c - 32;
+// 	return c;
+// }
 
-void transform(char* buff, int32_t size, char (*predicate)(char c)) {
-	for (int i = 0; i < size; ++i) {
-		buff[i] = predicate(buff[i]);
-	}
-}
+// void transform(char* buff, int32_t size, char (*predicate)(char c)) {
+// 	for (int i = 0; i < size; ++i) {
+// 		buff[i] = predicate(buff[i]);
+// 	}
+// }
