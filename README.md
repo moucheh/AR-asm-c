@@ -28,7 +28,7 @@ Azuriranje repozitorija je moguce komandom (terminal mora biti otvoren u direkto
 
 ## Cheatsheet
 
-Bash funckija koja kompajlira assembler/c kod i pokrece debugger na portu 1234
+Bash funkcija koja kompajlira assembler/c kod i pokrece debugger na portu 1234
 
 >         
 >      run_mips_db () {
@@ -38,7 +38,7 @@ Bash funckija koja kompajlira assembler/c kod i pokrece debugger na portu 1234
 >     }
 >
 
-Bash funckija koja kompajlira assembler/cpp kod i pokrece debugger na portu 1234
+Bash funkcija koja kompajlira assembler/cpp kod i pokrece debugger na portu 1234
 
 >     
 >     run_mips_cpp_db () {
@@ -55,7 +55,7 @@ Bash funckija koja kompajlira assembler/c kod
 >     }
 >
 
-Bash funckija koja kompajlira assembler/cpp kod
+Bash funkcija koja kompajlira assembler/cpp kod
 
 
 
