@@ -30,8 +30,8 @@ Azuriranje repozitorija je moguce komandom (terminal mora biti otvoren u direkto
 
 Bash funkcija koja kompajlira assembler/c kod i pokrece debugger na portu 1234
 
->         
->      run_mips_db () {
+>     
+>     run_mips_db () {
 >	     ecc -g -target mips32r2el-linux $1 -o $2
 >	     qemu-mipsel -g 1234 $2&
 >	     gdb-multiarch -q $2
