@@ -1,0 +1,14 @@
+Napraviti jednociklusni MIPS procesor koji podrzava sljedece instrukcije:
+
+I types OpCode   ALUOp
+addiu  001 000   0010
+sw     101 011   0010
+lw     100 011   0010
+
+R types Funct    ALUOp
+addu   100 001   0010
+and    100 100   1000
+or     100 101   1010
+sll    000 000   0000
+
+

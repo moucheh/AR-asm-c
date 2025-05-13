@@ -1,0 +1,7 @@
+Implementiratu ALU komponentu koja podrzava operacije:
+
+- 0010 - Sabiranje
+- 0110 - Oduzimanje
+- 1000 - Logicko AND
+- 1010 - Logicko OR
+- 1100 - Logicko XOR

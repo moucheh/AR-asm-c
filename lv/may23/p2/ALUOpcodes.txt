@@ -1,0 +1,9 @@
+0000 | C = B << sa  | shift left logical
+0010 | C = A + B    | add
+0100 | C = B >> sa  | shift right logical
+0101 | C = B >>> sa | shift right arithmetic
+0110 | C = A - B    | subtract
+1000 | C = A & B    | and
+1010 | C = A | B    | or
+1100 | C = A ^ B    | xor
+1110 | C = ~(A | B) | nor
